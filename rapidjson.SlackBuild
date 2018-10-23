@@ -19,14 +19,14 @@
 #
 # Visit SlackPack at http://sotirov-bg.net/slackpack/
 #
-# $Id: rapidjson.SlackBuild,v 1.1 2018/10/23 11:41:25 gsotirov Exp $
+# $Id: rapidjson.SlackBuild,v 1.2 2018/10/23 11:48:51 gsotirov Exp $
 #
 
 . ../../slack-package.conf
 
 NAME=rapidjson
-VERSION=1.0.2
-ARCH=${ARCH:-i486}
+VERSION=1.1.0
+ARCH=${ARCH:-i586}
 BUILD=${BUILD:-1}
 
 TMP=${TMP:-/tmp}
@@ -72,6 +72,7 @@ cd ../..
 # Prepare
 DOCFILES="${DOCFILES} CHANGELOG.md license.txt readme.md readme.zh-cn.md"
 ( cd $SRC; create_docs $PKG ${NAME}-${VERSION} )
+# TODO: Try to convert the MarkDowns to plain text
 ( cd $PKG/usr/doc/${NAME}-${VERSION}
   mv CHANGELOG.md ChangeLog
   mv license.txt COPYING
