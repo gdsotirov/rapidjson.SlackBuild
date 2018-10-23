@@ -1,0 +1,22 @@
+rapidjson: RapidJSON (A fast JSON parser/generator for C++ with both SAX/DOM style API)
+rapidjson:
+rapidjson: RapidJSON is a JSON parser and generator for C++. It was inspired
+rapidjson: by RapidXml.
+rapidjson: RapidJSON is:
+rapidjson:  * small but complete. It supports both SAX and DOM style API. The
+rapidjson:    SAX parser is only a half thousand lines of code.
+rapidjson:  * fast. Its performance can be comparable to strlen(). It also
+rapidjson:    optionally supports SSE2/SSE4.2 for acceleration.
+rapidjson:  * self-contained and header-only. It does not depend on external
+rapidjson:    libraries such as BOOST. It even does not depend on STL.
+rapidjson:  * memory-friendly. Each JSON value occupies exactly 16 bytes for
+rapidjson:    most 32/64-bit machines (excluding text string). By default it
+rapidjson:    uses a fast memory allocator, and the parser allocates memory
+rapidjson:    compactly during parsing.
+rapidjson:  * Unicode-friendly. It supports UTF-8, UTF-16, UTF-32 (LE & BE),
+rapidjson:    and their detection, validation and transcoding internally.
+rapidjson: JSON(JavaScript Object Notation) is a light-weight data exchange
+rapidjson: format. RapidJSON should be in full compliance with
+rapidjson: RFC7159/ECMA-404, with optional support of relaxed syntax.
+rapidjson:
+rapidjson: Packaged by Georgi D. Sotirov <gdsotirov@dir.bg>
