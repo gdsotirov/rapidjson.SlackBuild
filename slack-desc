@@ -19,4 +19,4 @@ rapidjson: JSON(JavaScript Object Notation) is a light-weight data exchange
 rapidjson: format. RapidJSON should be in full compliance with
 rapidjson: RFC7159/ECMA-404, with optional support of relaxed syntax.
 rapidjson:
-rapidjson: Packaged by Georgi D. Sotirov <gdsotirov@dir.bg>
+rapidjson: Packaged by Georgi D. Sotirov <gdsotirov@gmail.com>
