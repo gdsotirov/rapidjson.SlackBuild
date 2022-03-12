@@ -78,12 +78,15 @@ DOCFILES="${DOCFILES} CHANGELOG.md license.txt readme.md readme.zh-cn.md"
   mv readme.zh-cn.md README.zh-cn )
 
 install --mode 755 --directory $PKG/install
-install --mode 644 $CWD/slack-desc     $PKG/install/slack-desc
+install --mode 644 --preserve-timestamps \
+        $CWD/slack-desc     $PKG/install/slack-desc
 
 SBDIR=$PKG/usr/src/slackbuilds/${NAME}-${VERSION}
 mkdir --parents $SBDIR
-install --mode 644 $CWD/slack-desc         $SBDIR/slack-desc
-install --mode 644 $CWD/${NAME}.SlackBuild $SBDIR/${NAME}.SlackBuild
+install --mode 644 --preserve-timestamps \
+        $CWD/slack-desc         $SBDIR/slack-desc
+install --mode 644 --preserve-timestamps \
+        $CWD/${NAME}.SlackBuild $SBDIR/${NAME}.SlackBuild
 
 # Assemble
 cd $PKG
