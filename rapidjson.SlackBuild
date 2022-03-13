@@ -23,7 +23,8 @@
 . ../../slack-package.conf
 
 NAME=rapidjson
-VERSION=1.1.0
+VERSION="1.1.0_418331e"
+VER_CMT="418331e99f859f00bdc8306f69eba67e8693c55e"
 ARCH=${ARCH:-i586}
 BUILD=${BUILD:-1}
 
@@ -34,13 +35,13 @@ if [ ! -e $TMP ]; then
   mkdir --parents $TMP # location to build the source
 fi
 
-SRC=$TMP/${NAME}-${VERSION}
+SRC=$TMP/${NAME}-${VER_CMT}
 if [ -e $SRC -a -d $SRC ]; then
   echo "Source directory '$SRC' already exists! Plaese, move it or remove it."
   exit 1
 fi
 
-PKG=$TMP/package-$NAME
+PKG=$TMP/package-${NAME}
 if [ -e $PKG -a -d $PKG ]; then
   echo "Package creation directory '$PKG' already exists! Please, move it or remove it."
   exit 2
@@ -58,10 +59,11 @@ mkdir build; cd build
 cmake -LAH \
       -DCMAKE_BUILD_TYPE=Release \
       -DCMAKE_CXX_FLAGS="$SLKCFLAGS" \
+      -DCMAKE_INSTALL_DOCDIR=/usr/doc/${NAME}-${VERSION} \
+      -DCMAKE_INSTALL_LIBDIR=usr/lib${LIBDIRSUFFIX} \
       -DCMAKE_INSTALL_PREFIX=/usr \
-      -DDOC_INSTALL_DIR=/usr/doc/${NAME}-${VERSION} \
-      -DLIB_INSTALL_DIR=lib${LIBDIRSUFFIX} \
       -DCMAKE_VERBOSE_MAKEFILE=TRUE \
+      -DGTEST_SOURCE_DIR=/usr/src/googletest \
       .. || exit 5
 make --jobs || exit 6
 make DESTDIR=$PKG install || exit 7
