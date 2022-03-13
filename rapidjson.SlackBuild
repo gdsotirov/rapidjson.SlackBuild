@@ -24,6 +24,8 @@
 
 NAME=rapidjson
 VERSION="1.1.0_418331e"
+# The commit on which RapidJSON is based in MySQL 8
+# See https://github.com/mysql/mysql-server/blob/8.0/extra/RAPIDJSON-README
 VER_CMT="418331e99f859f00bdc8306f69eba67e8693c55e"
 ARCH=${ARCH:-i586}
 BUILD=${BUILD:-1}
@@ -65,6 +67,8 @@ cmake -LAH \
       -DCMAKE_VERBOSE_MAKEFILE=TRUE \
       -DGTEST_SOURCE_DIR=/usr/src/googletest \
       .. || exit 5
+# The following fails with compilation errors
+# See https://github.com/Tencent/rapidjson/issues/2003
 make --jobs || exit 6
 make DESTDIR=$PKG install || exit 7
 cd ../..
